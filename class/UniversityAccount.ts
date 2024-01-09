@@ -1,16 +1,16 @@
 import { DioAccount } from "./DioAccount";
 
-export class CompanyAccount extends DioAccount{
+export class UniversityAccount extends DioAccount{
 
     constructor(name: string, accountNumber: number, balance: number){
         super(name, accountNumber, balance);
     }
 
-    getLoan = (value: number): void => {
+    specialDeposit = (value: number):void => {
         if(this.validateStatus()){
+            value += 10;
             this.setBalance(this.getBalance() + value);
-            console.log(`Você fez um empréstimo de ${value}. Saldo atual: ${this.getBalance()}`);
-        }      
-    }    
-
+            console.log(`Você depositou ${value}. Saldo atual: ${this.getBalance()}`);
+        }
+    }
 }
